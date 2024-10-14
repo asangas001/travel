@@ -2,6 +2,7 @@ body{
     margin:0;
     padding: 0;
     font-family: 'inter',sans-serif;
+
 }
 
 .header{
@@ -42,26 +43,27 @@ body{
 .middle{
     
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-grow: 1; 
     margin: 0 20px;
+    justify-content: center;
     
    
 }
+
 
 .middle form{
     
     height: 68px;
     padding: 8px 16px 8px 16px;
     gap: 10px;
+    justify-content: center;
 
     display: flex;
     align-items:center ;
 
 }
 
-.middle div {
+.middle form div {
     width:auto;
     height: auto;
     padding: 8px 16px 8px 16px;
@@ -555,4 +557,152 @@ body{
     .cards {
         grid-template-columns: 1fr; /* One column */
     }
+}
+
+
+
+
+
+.where-container{
+    width: 530px;
+    height: auto;
+    background-color: white;
+    border-radius: 8px;
+
+    box-shadow: 0px 4px 4px 4px #00000008;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 500;
+    margin-top:100px;
+    justify-self: flex-start;
+    transform: translateX(-100px);
+    position: absolute; 
+    
+    visibility:hidden;
+    
+   
+
+}
+
+.where-container.visible {
+    visibility: visible; 
+    
+}
+
+
+
+
+
+.where-nav{
+    width: 475px;
+    height: 44px;
+    padding: 8px ;
+    margin:25px;
+    gap: 5px;
+    border-radius: 8px;
+    display: flex;
+
+
+    background-color: #e8e8e8;
+}
+
+.where-nav a{
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.where-nav div{
+    width: auto;
+    height: 28px;
+    padding: 8px 16px 8px 16px;
+    background-color: #e8e8e8;
+    color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+
+
+    
+}
+
+.where-nav div p{
+    font-size: 12px;
+    font-weight: 500;
+    color: #000000;
+}
+
+.region{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items:center ;
+}
+
+.where-content{
+    width: 475px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+}
+
+
+.where-row1{
+    width: 100%;
+    height: auto;
+    align-items: center;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content:flex-start;
+}
+.where-row2{
+    width: 100%;
+    height: auto;
+    align-items: center;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content:flex-start;
+}
+
+.m-c{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 40PX;
+
+
+}
+
+.m-c p{
+    font-size: 12px;
+    font-weight: 400;
+    color: #646464;
+}
+
+
+.c-i{
+    width: 133px;
+    height: 70px;
+    background-color: #C8EBFF;
+    border-radius: 8px;
+
+    
+}
+
+.c-i img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+
+
 }
