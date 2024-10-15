@@ -571,7 +571,7 @@ body{
 
     box-shadow: 0px 4px 4px 4px #00000008;
 
-    display: flex;
+    
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -582,14 +582,15 @@ body{
     transform: translateX(-100px);
     position: absolute; 
     
-    visibility:hidden;
+    display: none;
+    
     
    
 
 }
 
 .where-container.visible {
-    visibility: visible; 
+    display:flex; 
     
 }
 
@@ -608,6 +609,14 @@ body{
 
 
     background-color: #e8e8e8;
+}
+
+.where-navitem.active {
+    
+    border-radius: 8px;
+    background-color: white;
+
+    border: 1px solid #DEDEDE
 }
 
 .where-nav a{
@@ -636,6 +645,8 @@ body{
     color: #000000;
 }
 
+
+
 .region{
     width: 100%;
     height: 100%;
@@ -644,7 +655,9 @@ body{
     align-items:center ;
 }
 
-.where-content{
+
+
+.region .map-where-content{
     width: 475px;
     height: auto;
     display: flex;
@@ -654,7 +667,7 @@ body{
 }
 
 
-.where-row1{
+.region .where-row1{
     width: 100%;
     height: auto;
     align-items: center;
@@ -662,7 +675,7 @@ body{
     display: flex;
     justify-content:flex-start;
 }
-.where-row2{
+.region .where-row2{
     width: 100%;
     height: auto;
     align-items: center;
@@ -671,7 +684,7 @@ body{
     justify-content:flex-start;
 }
 
-.m-c{
+.region .m-c{
     
     display: flex;
     flex-direction: column;
@@ -682,14 +695,14 @@ body{
 
 }
 
-.m-c p{
+.region .m-c p{
     font-size: 12px;
     font-weight: 400;
     color: #646464;
 }
 
 
-.c-i{
+.region .c-i{
     width: 133px;
     height: 70px;
     background-color: #C8EBFF;
@@ -698,11 +711,143 @@ body{
     
 }
 
-.c-i img{
+.region .c-i img{
     width: 100%;
     height: 100%;
     object-fit: contain;
     border-radius: 8px;
 
 
+}
+
+
+
+
+
+
+
+.Transportation, .Accommodation, .Interests{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items:center ;
+}
+
+
+
+.where-content{
+    width: 475px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+
+.where-content .where-row1{
+    width: 100%;
+    height: auto;
+    align-items: center;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content:space-between;
+}
+.where-content .where-row2{
+    width: 100%;
+    height: auto;
+    align-items: center;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content:space-between;
+}
+
+.where-content .m-c{
+    
+    width: 135px;
+    height: 71px ;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items:center;
+    
+
+    border: 1px solid #E7E6E6;
+    padding: 8px 0 8px 0;
+    border-radius: 8px;
+
+}
+
+.where-content .m-c p{
+    font-size: 12px;
+    font-weight: 400;
+    color: #646464;
+    margin: 0;
+
+}
+
+
+.where-content .c-i{
+    width: 125px;
+    height: 24px;
+    background-color: white;
+    border-radius: 8px;
+    margin-bottom: 15px;
+
+ 
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+
+    
+}
+
+.where-content .c-i svg{
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    border-radius: 8px;
+    
+
+}
+
+#airbnb svg{
+    width: 46px !important;
+    height: 15px !important;
+}
+
+.m-c.active {
+    border: 1px solid #2B60FE;
+    
+}
+
+.region .m-c.active  {
+    border: none !important;
+    
+}
+
+.region .m-c.active .c-i {
+    border: 1px solid #2B60FE;
+    
+}
+
+.m-c.active svg path{
+    stroke: #2B60FE;
+}
+
+.m-c.active p{
+    color:#2B60FE;
+}
+
+.content-section {
+    display: none; 
+    
+}
+
+.content-section.active {
+    display: flex; 
 }

@@ -51,3 +51,71 @@ document.addEventListener('click', function(event) {
     }
 });
 
+
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Select all navigation items
+    const navLinks = document.querySelectorAll('.where-nav a');
+    const navItems = document.querySelectorAll('.where-navitem');
+    const contentSections = document.querySelectorAll('.content-section');
+
+    // Function to deactivate all nav items and content sections
+    function deactivateAll() {
+        navItems.forEach(item => item.classList.remove('active'));
+        contentSections.forEach(section => section.classList.remove('active'));
+    }
+
+    // Function to activate a specific nav item and its content
+    function activateNavItem(navItem, targetId) {
+        navItem.classList.add('active');
+        document.getElementById(targetId).classList.add('active');
+    }
+
+    // Set default active nav item (Region)
+    const defaultNavLink = document.querySelector('.where-nav a[data-target="region-content"]');
+    const defaultNavItem = defaultNavLink.querySelector('.where-navitem');
+    const defaultContent = document.getElementById(defaultNavLink.getAttribute('data-target'));
+    activateNavItem(defaultNavItem, defaultContent.id);
+
+    // Add click event listeners to navigation links
+    navLinks.forEach(link => {
+        link.addEventListener('click', function (e) {
+            e.preventDefault(); // Prevent default anchor behavior
+
+            const targetId = this.getAttribute('data-target');
+            const targetNavItem = this.querySelector('.where-navitem');
+
+            // Deactivate all
+            deactivateAll();
+
+            // Activate the clicked nav item and its content
+            activateNavItem(targetNavItem, targetId);
+        });
+    });
+
+
+    
+
+            // Select all elements with the class 'm-c'
+        const elements = document.querySelectorAll('.m-c');
+
+        elements.forEach(element => {
+            element.addEventListener('click', () => {
+                // Remove 'active' class from all elements
+                elements.forEach(el => el.classList.remove('active'));
+                
+                // Add 'active' class to the clicked element
+                element.classList.add('active');
+            });
+        });
+
+
+    
+});
+
