@@ -193,7 +193,7 @@ body{
     width: 100%;
     
     display: flex;
-    justify-content: center;
+    
     position: relative;
 
 
@@ -206,6 +206,7 @@ body{
     left: 0; 
     width: 520px; 
     height: 100vh; 
+    overflow: hidden;
 
    
 }
@@ -216,7 +217,7 @@ body{
     justify-content: center;
     width:100%;
     height: 60px;
-    margin-bottom: 2px;
+    margin-bottom: 10px;
 
     background-color: white;
     padding-top: 8px;
@@ -288,9 +289,13 @@ body{
 
 .cards{
 
-margin-top: 10px;
-overflow-y: auto;
+    border-radius: 10px 0 0 0;
+    overflow-y: auto;
+    display: block;
+
+
 }
+
 
 .cards a{
     all: unset;
@@ -306,7 +311,8 @@ overflow-y: auto;
     height: 167px;
     margin-bottom:5px;
 
-    border: 1px solid #F4F4F4
+    border: 1px solid #F4F4F4;
+    flex-shrink: 0;
 
 }
 
@@ -418,6 +424,7 @@ overflow-y: auto;
         width: 100%;
         height: auto;
         position: relative;
+        overflow: hidden;
     }
 
     .navbar {
@@ -471,7 +478,6 @@ overflow-y: auto;
     background-image: url('../images/location/yala.png');
     width:167px;
     height: 167px;
-    border-radius: 8px 0 0 0 ;
     background-size:cover ;
     background-position: 0;
     
@@ -588,16 +594,31 @@ overflow-y: auto;
 }
 
 
-.detail-container{
-    flex-grow: 1;
-    display: flex;
+.details-container{
     flex-grow: 1;
     margin-left:auto; 
     position: relative;
     height: 100vh; 
     width: calc(100% - 520px);
+    display: none;
     
 }
+
+.details-container.active-details {
+    display: block; 
+}
+
+.details-container {
+    position: relative;
+    /* Other necessary styles */
+  }
+  
+  .map-container, .location-details {
+    display: none; /* Default hidden */
+  }
+  
+  .map-container.active, .location-details.active {
+    display: block; /* Show only the active one */}
 
 .map-container{
     width: 100%;

@@ -201,7 +201,7 @@ body{
 
 .web-body{
 
-    width: auto;
+    width:100%;
     padding: 15px;
 
     margin-left: 5%;
@@ -529,9 +529,13 @@ body{
 
     
 .cards {
-    display: grid; 
+    display: none; 
     grid-template-columns: repeat(5, 1fr); 
     gap: 32px;
+}
+
+.cards.active{
+    display: grid;
 }
 
 @media (max-width: 1770px) {
@@ -547,52 +551,127 @@ body{
     }
 }
 
-@media (max-width: 880px) {
+@media (max-width: 768px) {
     .cards {
         grid-template-columns: repeat(2, 1fr); /* Two equal columns */
     }
 }
 
-@media (max-width: 580px) {
+
+
+@media (max-width: 320px) {
     .cards {
         grid-template-columns: 1fr; /* One column */
     }
 }
 
+/*....................................................responsiveness...........................*/
 
 
 
 
-.where-container{
+
+@media (max-width: 1024px) {
+
+
+}
+
+
+
+@media (max-width: 768px) {
+
+ 
+}
+
+
+
+
+
+@media (max-width: 380px) {
+
+    .header-items{
+        display: none;
+    }
+
+    .content{
+        width:100%;
+        padding: 15px;
+        display: flex;
+        justify-content: center;
+        position: relative;
+    
+        
+    }
+
+    .navbar{
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        height: 60px;
+        background-color: white;
+        max-width:370px;
+        min-width: auto;
+        padding-top: 8px;
+        padding-left: 32px;
+        padding-bottom: 8px;
+        padding-right: 32px;
+        margin: auto 0 auto 0;
+    
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        
+    }
+
+
+}
+
+
+
+
+
+/* General dropdown styles for all containers */
+.where-container, .check-in-container, .check-out-container, .who-container {
     width: 530px;
     height: auto;
     background-color: white;
     border-radius: 8px;
-
     box-shadow: 0px 4px 4px 4px #00000008;
-
-    
     flex-direction: column;
     justify-content: center;
     align-items: center;
     position: fixed;
     z-index: 500;
-    margin-top:100px;
-    justify-self: flex-start;
-    transform: translateX(-100px);
-    position: absolute; 
-    
+    margin-top: 100px;
     display: none;
-    
-    
-   
-
+    position: absolute;
 }
 
-.where-container.visible {
-    display:flex; 
-    
+/* Visible class applied when the dropdown is active */
+.where-container.visible, 
+.check-in-container.visible, 
+.check-out-container.visible, 
+.who-container.visible {
+    display: flex;
 }
+
+/* Adjust transforms to position the dropdown for each field */
+.where-container {
+    transform: translateX(-100px); /* Where field */
+}
+
+.check-in-container {
+    transform: translateX(100px); /* Check-In field */
+}
+
+.check-out-container {
+    transform: translateX(240px); /* Check-Out field */
+}
+
+.who-container {
+    transform: translateX(390px); /* Who field */
+}
+
 
 
 
@@ -673,7 +752,8 @@ body{
     align-items: center;
     margin-bottom: 30px;
     display: flex;
-    justify-content:flex-start;
+    justify-content:space-between;
+
 }
 .region .where-row2{
     width: 100%;
@@ -681,16 +761,22 @@ body{
     align-items: center;
     margin-bottom: 30px;
     display: flex;
-    justify-content:flex-start;
+    justify-content:space-between;
 }
 
 .region .m-c{
     
+
+
+    width: 135px;
+    height: 71px ;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-right: 40PX;
+    justify-content: space-between;
+    align-items:center;
+    padding: 8px 0 8px 0;
+    border-radius: 8px;
+
 
 
 }
@@ -707,6 +793,8 @@ body{
     height: 70px;
     background-color: #C8EBFF;
     border-radius: 8px;
+    border: 1px solid #C8EBFF;
+    
 
     
 }
@@ -850,4 +938,5 @@ body{
 
 .content-section.active {
     display: flex; 
+    
 }
