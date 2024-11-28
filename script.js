@@ -161,6 +161,87 @@ whoInput.addEventListener('click', function (event) {
     showDropdown(whoInput, whoContainer);
 });
 
+
+//calander
+$(document).ready(function () {
+    // Initialize datepicker for check-in field
+    $("#check-in").datepicker({
+        changeMonth: true,
+        changeYear: true,
+        dateFormat: "mm/dd/yy",
+        onSelect: function (selectedDate) {
+            $("#check-in").val(selectedDate);
+        }
+    });
+
+    // Initialize datepicker for check-out field
+    $("#check-out").datepicker({
+        changeMonth: true,
+        changeYear: true,
+        dateFormat: "mm/dd/yy",
+        onSelect: function (selectedDate) {
+            $("#check-out").val(selectedDate);
+        }
+    });
+
+    // Open check-in dropdown
+    $("#check-in").on("click", function (event) {
+        event.stopPropagation();
+        $("#checkin-container").addClass("visible"); // Show the check-in dropdown
+    });
+
+    // Open check-out dropdown
+    $("#check-out").on("click", function (event) {
+        event.stopPropagation();
+        $("#checkout-container").addClass("visible"); // Show the check-out dropdown
+    });
+});
+
+// Hide dropdowns when clicking outside
+$(document).on("click", function (event) {
+    if (!$(event.target).closest("#checkin-container, #check-in").length) {
+        $("#checkin-container").removeClass("visible");
+    }
+    if (!$(event.target).closest("#checkout-container, #check-out").length) {
+        $("#checkout-container").removeClass("visible");
+    }
+});
+
+
+
+
+
+$(document).ready(function() {
+    // Initialize the spinner for the 'who' dropdown
+    $("#who-spinner").spinner({
+        min: 0,  // Minimum value
+        max: 100, // Maximum value
+        step: 1,  // Increment/decrement step
+    });
+
+    // Show the spinner dropdown when 'who' input is clicked
+    $("#who").on("click", function() {
+        $("#spinner-dropdown").toggle(); // Toggle visibility of the dropdown
+        $("#who-spinner").focus(); // Focus on the spinner input
+    });
+
+    // Update the 'who' input value when the spinner value changes
+    $("#who-spinner").on("change spinchange", function() {
+        var spinnerValue = $(this).val(); // Get the current value of the spinner
+        $("#who").val(spinnerValue); // Update the 'who' input with the spinner value
+    });
+
+    // Hide spinner dropdown when clicking outside
+    $(document).on("click", function(event) {
+        if (!$(event.target).closest("#who-container").length) {
+            $("#spinner-dropdown").hide(); // Hide the dropdown
+        }
+    });
+});
+
+
+
+
 // Hide dropdown if the user clicks outside of the input fields or containers
 document.addEventListener('click', function (event) {
     if (!destinationInput.contains(event.target) && 
